@@ -1,0 +1,12 @@
+PODS:
+  - RichEditorView (3.2.0)
+
+DEPENDENCIES:
+  - RichEditorView
+
+SPEC CHECKSUMS:
+  RichEditorView: b4ee60a4f5301cbe8f3fcb1f065cdd7de74ddd10
+
+PODFILE CHECKSUM: a20d05845f31966045c3c2a28f0e57c3d9b80b20
+
+COCOAPODS: 1.0.0.beta.5
