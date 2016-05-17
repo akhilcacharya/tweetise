@@ -31,9 +31,8 @@ class ChirpListViewController: UITableViewController, NSFetchedResultsController
         //Set the navigation bar tint
         
         self.navigationController?.navigationBar.barTintColor = mainColor
-        self.navigationController?.navigationBar.tintColor = secondaryColor
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
-
         
         
         doFetch()
