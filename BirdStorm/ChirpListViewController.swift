@@ -27,6 +27,15 @@ class ChirpListViewController: UITableViewController, NSFetchedResultsController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Set the navigation bar tint
+        
+        self.navigationController?.navigationBar.barTintColor = mainColor
+        self.navigationController?.navigationBar.tintColor = secondaryColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+
+        
+        
         doFetch()
         if(isForceTouchAvailable()){
             registerForPreviewingWithDelegate(self, sourceView: tableView)

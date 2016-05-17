@@ -21,13 +21,10 @@ class ImageUtilities {
         
         // Create path.
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let filePath = "\(paths[0])/testimage.png"
-        
-        print(filePath)
+        let filePath = "\(paths[0])/\(chirp.title).png"
         
         // Save image.
         UIImagePNGRepresentation(result)?.writeToFile(filePath, atomically: true)
-        
         
         return UIImagePNGRepresentation(result)!
     }

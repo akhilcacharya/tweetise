@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1FE5FAEE65EC002C1DD65F69555BD0D2"
-               BuildableName = "Pods_BirdStorm.framework"
-               BlueprintName = "Pods-BirdStorm"
+               BlueprintIdentifier = "6536AE7567120798073AA082CBD6F1FF"
+               BuildableName = "Pods_Tweetise.framework"
+               BlueprintName = "Pods-Tweetise"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1FE5FAEE65EC002C1DD65F69555BD0D2"
-            BuildableName = "Pods_BirdStorm.framework"
-            BlueprintName = "Pods-BirdStorm"
+            BlueprintIdentifier = "6536AE7567120798073AA082CBD6F1FF"
+            BuildableName = "Pods_Tweetise.framework"
+            BlueprintName = "Pods-Tweetise"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

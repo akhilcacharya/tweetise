@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		131E9B6D1CE945F700FBFE58 /* ImageUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131E9B6C1CE945F700FBFE58 /* ImageUtilities.swift */; };
+		13567C491CEB43D300601BD0 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13567C481CEB43D300601BD0 /* Palette.swift */; };
 		1365D6851CE7C8F400BC1B5F /* ChirpEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1365D6831CE7C8F400BC1B5F /* ChirpEntry+CoreDataProperties.swift */; };
 		1365D6861CE7C8F400BC1B5F /* ChirpEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1365D6841CE7C8F400BC1B5F /* ChirpEntry.swift */; };
 		13AC5AD41CE9093100B70CA5 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC5AD31CE9093100B70CA5 /* PreviewViewController.swift */; };
@@ -19,11 +20,13 @@
 		13D14C921CE6B8BA00349EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D14C901CE6B8BA00349EEC /* LaunchScreen.storyboard */; };
 		13D14C9C1CE6BB9000349EEC /* ChirpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D14C9B1CE6BB9000349EEC /* ChirpCell.swift */; };
 		13D14CA11CE6CEBA00349EEC /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D14CA01CE6CEBA00349EEC /* EditViewController.swift */; };
+		68B00C2B67FAA9381EF0A34F /* Pods_Tweetise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAF8CD01273B6E781E9AAD0 /* Pods_Tweetise.framework */; };
 		EC527C528478443D3B0C2B0C /* Pods_BirdStorm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D626F10F52FB0E739E9FE087 /* Pods_BirdStorm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		131E9B6C1CE945F700FBFE58 /* ImageUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtilities.swift; sourceTree = "<group>"; };
+		13567C481CEB43D300601BD0 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		1365D6831CE7C8F400BC1B5F /* ChirpEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChirpEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1365D6841CE7C8F400BC1B5F /* ChirpEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChirpEntry.swift; sourceTree = "<group>"; };
 		13AC5AD31CE9093100B70CA5 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
@@ -38,7 +41,10 @@
 		13D14C9B1CE6BB9000349EEC /* ChirpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChirpCell.swift; sourceTree = "<group>"; };
 		13D14CA01CE6CEBA00349EEC /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		506F1716F8154B1FB1CEC4AF /* Pods-BirdStorm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirdStorm.release.xcconfig"; path = "Pods/Target Support Files/Pods-BirdStorm/Pods-BirdStorm.release.xcconfig"; sourceTree = "<group>"; };
+		908A4AD8AFBFB1DCFBFF66CA /* Pods-Tweetise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetise.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweetise/Pods-Tweetise.release.xcconfig"; sourceTree = "<group>"; };
 		922051DC63D831F53C7F153D /* Pods-BirdStorm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirdStorm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BirdStorm/Pods-BirdStorm.debug.xcconfig"; sourceTree = "<group>"; };
+		BAAF8CD01273B6E781E9AAD0 /* Pods_Tweetise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tweetise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C19157459B06FF69A9878D90 /* Pods-Tweetise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweetise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tweetise/Pods-Tweetise.debug.xcconfig"; sourceTree = "<group>"; };
 		D626F10F52FB0E739E9FE087 /* Pods_BirdStorm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirdStorm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC527C528478443D3B0C2B0C /* Pods_BirdStorm.framework in Frameworks */,
+				68B00C2B67FAA9381EF0A34F /* Pods_Tweetise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +131,7 @@
 		13FD65A51CE7ABC200556EAD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				13567C481CEB43D300601BD0 /* Palette.swift */,
 				13D14C841CE6B8BA00349EEC /* AppDelegate.swift */,
 				13D14C8B1CE6B8BA00349EEC /* BirdStorm.xcdatamodeld */,
 				13D14C8E1CE6B8BA00349EEC /* Assets.xcassets */,
@@ -137,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				D626F10F52FB0E739E9FE087 /* Pods_BirdStorm.framework */,
+				BAAF8CD01273B6E781E9AAD0 /* Pods_Tweetise.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +155,8 @@
 			children = (
 				922051DC63D831F53C7F153D /* Pods-BirdStorm.debug.xcconfig */,
 				506F1716F8154B1FB1CEC4AF /* Pods-BirdStorm.release.xcconfig */,
+				C19157459B06FF69A9878D90 /* Pods-Tweetise.debug.xcconfig */,
+				908A4AD8AFBFB1DCFBFF66CA /* Pods-Tweetise.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -233,7 +244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BirdStorm/Pods-BirdStorm-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tweetise/Pods-Tweetise-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		80609A4516AE983193686BFC /* 📦 Embed Pods Frameworks */ = {
@@ -248,7 +259,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BirdStorm/Pods-BirdStorm-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tweetise/Pods-Tweetise-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C16F086BC73287591CDF2A76 /* 📦 Check Pods Manifest.lock */ = {
@@ -279,6 +290,7 @@
 				1365D6861CE7C8F400BC1B5F /* ChirpEntry.swift in Sources */,
 				131E9B6D1CE945F700FBFE58 /* ImageUtilities.swift in Sources */,
 				1365D6851CE7C8F400BC1B5F /* ChirpEntry+CoreDataProperties.swift in Sources */,
+				13567C491CEB43D300601BD0 /* Palette.swift in Sources */,
 				13D14C871CE6B8BA00349EEC /* ChirpListViewController.swift in Sources */,
 				13D14C851CE6B8BA00349EEC /* AppDelegate.swift in Sources */,
 				13AC5AD41CE9093100B70CA5 /* PreviewViewController.swift in Sources */,
@@ -392,7 +404,7 @@
 		};
 		13D14C971CE6B8BA00349EEC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 922051DC63D831F53C7F153D /* Pods-BirdStorm.debug.xcconfig */;
+			baseConfigurationReference = C19157459B06FF69A9878D90 /* Pods-Tweetise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -407,7 +419,7 @@
 		};
 		13D14C981CE6B8BA00349EEC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 506F1716F8154B1FB1CEC4AF /* Pods-BirdStorm.release.xcconfig */;
+			baseConfigurationReference = 908A4AD8AFBFB1DCFBFF66CA /* Pods-Tweetise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

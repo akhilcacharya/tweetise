@@ -71,17 +71,11 @@ class EditViewController: UIViewController {
         ]
     }
     
-    //Swap the ShareAction IBOutlet with the SaveAction IBOutlet
     @IBAction func shareAction(sender: AnyObject) {
-        print("Share")
-        
         saveCurrentState()
-        
         titleEditText.endEditing(true)
         editorView.endEditing(true)
-        
         ImageUtilities.getChirpImage(self.editorView.webView, chirp: self.currentChirp)
-        print("Done")
     }
 
     @IBAction func onTitleChanged(sender: AnyObject) {

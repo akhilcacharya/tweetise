@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-BirdStorm.xcscheme</key>
+		<key>Pods-Tweetise.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1FE5FAEE65EC002C1DD65F69555BD0D2</key>
+		<key>6536AE7567120798073AA082CBD6F1FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>34D8A9B47D5265D20A32944A2F6EBEDD</key>
+		<key>66A6748DF4054190C7F34B0ED56C7A62</key>
 		<dict>
 			<key>primary</key>
 			<true/>

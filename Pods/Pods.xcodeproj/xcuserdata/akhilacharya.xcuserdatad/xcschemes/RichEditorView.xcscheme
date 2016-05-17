@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '34D8A9B47D5265D20A32944A2F6EBEDD'
+               BlueprintIdentifier = '66A6748DF4054190C7F34B0ED56C7A62'
                BlueprintName = 'RichEditorView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'RichEditorView.framework'>
