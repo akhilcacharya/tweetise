@@ -9,7 +9,6 @@
 import UIKit
 
 class ChirpCell: UITableViewCell {
-
     
     @IBOutlet weak var titleView: UILabel!
     @IBOutlet weak var dateView: UILabel!
@@ -24,7 +23,6 @@ class ChirpCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String!){
         super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

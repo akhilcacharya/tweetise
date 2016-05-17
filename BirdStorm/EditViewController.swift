@@ -16,9 +16,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var titleEditText: UITextField!
     @IBOutlet weak var editorView: RichEditorView!
     @IBOutlet weak var editorToolbar: RichEditorToolbar!
-    
-    
-    
+
     var currentChirp: ChirpEntry!
     
     override func viewDidLoad() {
@@ -30,7 +28,6 @@ class EditViewController: UIViewController {
         //Setup Toolbar
         self.editorToolbar.options =  getOptions()
     
-        
         self.editorToolbar.editor = self.editorView
         
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -38,14 +35,12 @@ class EditViewController: UIViewController {
     
         
         if(self.currentChirp == nil){
-            print("Segue null")
             self.currentChirp = ChirpEntry.newInstance(managedContext)
             self.titleEditText.text = self.currentChirp.getFormattedDate()
         }else{
             self.editorView.setHTML(currentChirp.text!)
             self.titleEditText.text = currentChirp.title
         }
-        
         
         //Set title
         self.title = "\(titleEditText.text!)"
@@ -54,11 +49,15 @@ class EditViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillDisappear(animated: Bool) {
+        saveCurrentState()
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    @IBOutlet weak var shareAction: UIBarButtonItem!
     private func getOptions() -> [RichEditorOption]{
         return [
             RichEditorOptions.Redo,
@@ -72,7 +71,19 @@ class EditViewController: UIViewController {
         ]
     }
     
-    
+    //Swap the ShareAction IBOutlet with the SaveAction IBOutlet
+    @IBAction func shareAction(sender: AnyObject) {
+        print("Share")
+        
+        saveCurrentState()
+        
+        titleEditText.endEditing(true)
+        editorView.endEditing(true)
+        
+        ImageUtilities.getChirpImage(self.editorView.webView, chirp: self.currentChirp)
+        print("Done")
+    }
+
     @IBAction func onTitleChanged(sender: AnyObject) {
         self.title = "\(titleEditText.text!)"
         if self.title == "" {
@@ -81,22 +92,17 @@ class EditViewController: UIViewController {
         
         self.currentChirp.title = self.titleEditText.text
     }
-
-    @IBAction func saveAction(sender: AnyObject) {
+    
+    func saveCurrentState(){
         self.currentChirp.title = self.titleEditText.text!
         self.currentChirp.text = self.editorView.getHTML()
-        
-        print(self.currentChirp.text)
-        
-        
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = app.managedObjectContext
-    
+        
         do {
             try managedContext.save()
         } catch {
             print("Error saving")
         }
     }
-
 }

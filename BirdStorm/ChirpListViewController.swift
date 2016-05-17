@@ -10,24 +10,23 @@ import CoreData
 import UIKit
 
 class ChirpListViewController: UITableViewController, NSFetchedResultsControllerDelegate, UIViewControllerPreviewingDelegate {
-    
-    
-    
-    
+
+    lazy var managedContext: NSManagedObjectContext = {
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = app.managedObjectContext
+        return managedContext
+    }()
+        
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let chipRequest = NSFetchRequest(entityName: "ChirpEntry")
         let dateSort = NSSortDescriptor(key: "date", ascending: true)
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = app.managedObjectContext
         chipRequest.sortDescriptors = [dateSort]
-        
-        let controller = NSFetchedResultsController(fetchRequest: chipRequest, managedObjectContext: managedContext, sectionNameKeyPath: nil, cacheName: nil)
+        let controller = NSFetchedResultsController(fetchRequest: chipRequest, managedObjectContext: self.managedContext, sectionNameKeyPath: nil, cacheName: nil)
         return controller
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         doFetch()
         if(isForceTouchAvailable()){
             registerForPreviewingWithDelegate(self, sourceView: tableView)
@@ -45,7 +44,6 @@ class ChirpListViewController: UITableViewController, NSFetchedResultsController
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,7 +51,6 @@ class ChirpListViewController: UITableViewController, NSFetchedResultsController
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //Segue to the VC
         self.performSegueWithIdentifier("toEditorWithChirp", sender: self)
     }
     
@@ -82,46 +79,31 @@ class ChirpListViewController: UITableViewController, NSFetchedResultsController
         tableView.endUpdates()
     }
     
-    func deleteListElement(action: UITableViewRowAction, index: NSIndexPath){
-        print("Delete button tapped")
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        switch(type){
+            case NSFetchedResultsChangeType.Delete:
+                tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
+                break;
+            default: break;
+        }
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
+        let delete = UITableViewRowAction(style: .Destructive, title: "Delete", handler: deleteListElement)
+        
+        return [delete]
+    }
+    
+    func deleteListElement(action: UITableViewRowAction, index: NSIndexPath){
         let chirp = fetchedResultsController.objectAtIndexPath(index) as! ChirpEntry
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = app.managedObjectContext
         managedContext.deleteObject(chirp)
-       
-
         do {
             try managedContext.save()
         }catch {
             print("Error saving")
         }
-        
-        doFetch()        
-    }
-    
-    
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
-        
-        switch(type){
-         
-        case NSFetchedResultsChangeType.Delete:
-            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
-            break;
-        default: break;
-        }
-    }
-    
-    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let favorite = UITableViewRowAction(style: .Normal, title: "Share") { action, index in
-            print("Share button tapped")
-        }
-        
-        favorite.backgroundColor = UIColor.blueColor()
-        
-        let delete = UITableViewRowAction(style: .Destructive, title: "Delete", handler: deleteListElement)
-        
-        return [delete, favorite]
+        doFetch()
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -130,18 +112,14 @@ class ChirpListViewController: UITableViewController, NSFetchedResultsController
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
         var cell = tableView.dequeueReusableCellWithIdentifier("chirpCell") as? ChirpCell
-        
+    
         if cell == nil {
             cell = ChirpCell()
         }
-        
-        let chirp = fetchedResultsController.objectAtIndexPath(indexPath) as! ChirpEntry
-        
-        cell!.setViews(chirp)
     
-
+        let chirp = fetchedResultsController.objectAtIndexPath(indexPath) as! ChirpEntry
+        cell!.setViews(chirp)
         return cell!
     }
     
@@ -158,21 +136,16 @@ class ChirpListViewController: UITableViewController, NSFetchedResultsController
     
     
     func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
-     //   navigationController?.pushViewController(viewControllerToCommit, animated: true)
+        //No pop, only push. Come at me review board. 
     }
     
     
     func isForceTouchAvailable() -> Bool {
         var isAvailable = false
-        
         if(self.traitCollection.respondsToSelector(Selector("forceTouchCapability"))){
             isAvailable = self.traitCollection.forceTouchCapability == UIForceTouchCapability.Available
         }
-
         return isAvailable
     }
-    
-    
-    
 }
 

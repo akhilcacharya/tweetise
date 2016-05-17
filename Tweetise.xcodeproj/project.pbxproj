@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131E9B6D1CE945F700FBFE58 /* ImageUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131E9B6C1CE945F700FBFE58 /* ImageUtilities.swift */; };
 		1365D6851CE7C8F400BC1B5F /* ChirpEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1365D6831CE7C8F400BC1B5F /* ChirpEntry+CoreDataProperties.swift */; };
 		1365D6861CE7C8F400BC1B5F /* ChirpEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1365D6841CE7C8F400BC1B5F /* ChirpEntry.swift */; };
 		13AC5AD41CE9093100B70CA5 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC5AD31CE9093100B70CA5 /* PreviewViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		131E9B6C1CE945F700FBFE58 /* ImageUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtilities.swift; sourceTree = "<group>"; };
 		1365D6831CE7C8F400BC1B5F /* ChirpEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChirpEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1365D6841CE7C8F400BC1B5F /* ChirpEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChirpEntry.swift; sourceTree = "<group>"; };
 		13AC5AD31CE9093100B70CA5 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		131E9B6B1CE945D400FBFE58 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				131E9B6C1CE945F700FBFE58 /* ImageUtilities.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		13D14C781CE6B8B900349EEC = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 		13D14C831CE6B8BA00349EEC /* Tweetise */ = {
 			isa = PBXGroup;
 			children = (
+				131E9B6B1CE945D400FBFE58 /* Utils */,
 				13FD65A51CE7ABC200556EAD /* Supporting Files */,
 				13D14C9F1CE6C13F00349EEC /* Controllers */,
 				13D14C9A1CE6BB7400349EEC /* Views */,
@@ -266,6 +277,7 @@
 				13D14C8D1CE6B8BA00349EEC /* BirdStorm.xcdatamodeld in Sources */,
 				13D14CA11CE6CEBA00349EEC /* EditViewController.swift in Sources */,
 				1365D6861CE7C8F400BC1B5F /* ChirpEntry.swift in Sources */,
+				131E9B6D1CE945F700FBFE58 /* ImageUtilities.swift in Sources */,
 				1365D6851CE7C8F400BC1B5F /* ChirpEntry+CoreDataProperties.swift in Sources */,
 				13D14C871CE6B8BA00349EEC /* ChirpListViewController.swift in Sources */,
 				13D14C851CE6B8BA00349EEC /* AppDelegate.swift in Sources */,

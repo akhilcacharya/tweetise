@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13D14C801CE6B8BA00349EEC"
-               BuildableName = "ChirpStorm.app"
+               BuildableName = "Tweetise.app"
                BlueprintName = "Tweetise"
                ReferencedContainer = "container:Tweetise.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13D14C801CE6B8BA00349EEC"
-            BuildableName = "ChirpStorm.app"
+            BuildableName = "Tweetise.app"
             BlueprintName = "Tweetise"
             ReferencedContainer = "container:Tweetise.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13D14C801CE6B8BA00349EEC"
-            BuildableName = "ChirpStorm.app"
+            BuildableName = "Tweetise.app"
             BlueprintName = "Tweetise"
             ReferencedContainer = "container:Tweetise.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13D14C801CE6B8BA00349EEC"
-            BuildableName = "ChirpStorm.app"
+            BuildableName = "Tweetise.app"
             BlueprintName = "Tweetise"
             ReferencedContainer = "container:Tweetise.xcodeproj">
          </BuildableReference>

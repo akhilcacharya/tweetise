@@ -7,16 +7,16 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Chirp-->
+        <!--Tweetise-->
         <scene sceneID="C0M-7B-oAm">
             <objects>
-                <tableViewController id="S6c-09-9op" customClass="ChirpListViewController" customModule="ChirpStorm" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="S6c-09-9op" customClass="ChirpListViewController" customModule="Tweetise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bku-8W-3nL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="chirpCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="chirpCell" id="8N9-l9-Sg2" customClass="ChirpCell" customModule="ChirpStorm" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="chirpCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="chirpCell" id="8N9-l9-Sg2" customClass="ChirpCell" customModule="Tweetise" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8N9-l9-Sg2" id="Z90-5u-Z4r">
@@ -105,7 +105,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Chirp" id="Jdn-fU-jb1"/>
+                    <navigationItem key="navigationItem" title="Tweetise" id="Jdn-fU-jb1"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="hts-Yw-51Q" kind="show" identifier="toEditorWithChirp" id="foY-O8-feR"/>
@@ -118,7 +118,7 @@
         <!--Editing-->
         <scene sceneID="S84-Bo-Oz4">
             <objects>
-                <viewController id="hts-Yw-51Q" customClass="EditViewController" customModule="ChirpStorm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hts-Yw-51Q" customClass="EditViewController" customModule="Tweetise" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NI1-IS-ffP"/>
                         <viewControllerLayoutGuide type="bottom" id="Ms5-hb-KiO"/>
@@ -201,15 +201,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Editing" id="poW-mp-Nxj">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="nJP-BG-VQi">
+                        <barButtonItem key="rightBarButtonItem" image="Upload-50" id="nJP-BG-VQi">
                             <connections>
-                                <action selector="saveAction:" destination="hts-Yw-51Q" id="gBk-dE-kpa"/>
+                                <action selector="shareAction:" destination="hts-Yw-51Q" id="oWD-t2-yfe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="editorToolbar" destination="ujU-05-tF9" id="Yd8-EY-2cU"/>
                         <outlet property="editorView" destination="YNf-K6-G7r" id="xvN-Gn-Aew"/>
+                        <outlet property="shareAction" destination="nJP-BG-VQi" id="jwW-H2-KoS"/>
                         <outlet property="titleEditText" destination="oOv-s1-1zn" id="nal-wX-nYb"/>
                     </connections>
                 </viewController>
@@ -220,111 +221,112 @@
         <!--Preview View Controller-->
         <scene sceneID="hOx-Iz-sZ1">
             <objects>
-                <viewController storyboardIdentifier="PreviewViewController" id="fgA-ug-l86" customClass="PreviewViewController" customModule="ChirpStorm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreviewViewController" id="fgA-ug-l86" customClass="PreviewViewController" customModule="Tweetise" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qnv-GI-E61"/>
                         <viewControllerLayoutGuide type="bottom" id="WQN-3w-XVE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8iL-sk-xD6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcQ-EI-nqh">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJ2-vj-6Vg">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="xFI-sh-EX7"/>
+                                    <constraint firstAttribute="height" constant="37" id="kKb-Jh-9hY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="xFI-sh-EX7"/>
+                                        <exclude reference="kKb-Jh-9hY"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="xFI-sh-EX7"/>
+                                        <include reference="kKb-Jh-9hY"/>
                                     </mask>
                                 </variation>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hd-vt-Iah" customClass="RichEditorView" customModule="RichEditorView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfi-2a-L2z">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="lil-jm-N49"/>
+                                    <constraint firstAttribute="height" constant="21" id="Hby-om-mWN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="lil-jm-N49"/>
+                                        <exclude reference="Hby-om-mWN"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="lil-jm-N49"/>
+                                        <include reference="Hby-om-mWN"/>
                                     </mask>
                                 </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WQN-3w-XVE" firstAttribute="top" secondItem="CcQ-EI-nqh" secondAttribute="bottom" constant="220" id="43i-mL-n7R"/>
-                            <constraint firstItem="Qfi-2a-L2z" firstAttribute="top" secondItem="tJ2-vj-6Vg" secondAttribute="bottom" constant="8" symbolic="YES" id="64v-JY-lCo"/>
-                            <constraint firstItem="tJ2-vj-6Vg" firstAttribute="trailing" secondItem="Qfi-2a-L2z" secondAttribute="trailing" id="B5M-Ig-m5j"/>
-                            <constraint firstItem="Qfi-2a-L2z" firstAttribute="trailing" secondItem="CcQ-EI-nqh" secondAttribute="trailing" id="CA5-tn-hw9"/>
-                            <constraint firstItem="Qfi-2a-L2z" firstAttribute="leading" secondItem="CcQ-EI-nqh" secondAttribute="leading" id="CgL-SD-zk8"/>
-                            <constraint firstItem="tJ2-vj-6Vg" firstAttribute="leading" secondItem="8iL-sk-xD6" secondAttribute="leadingMargin" id="MjH-rG-jBx"/>
-                            <constraint firstItem="tJ2-vj-6Vg" firstAttribute="top" secondItem="Qnv-GI-E61" secondAttribute="bottom" constant="28" id="YZV-94-5Gw"/>
-                            <constraint firstItem="CcQ-EI-nqh" firstAttribute="top" secondItem="Qfi-2a-L2z" secondAttribute="bottom" constant="28" id="bOc-TQ-OfB"/>
-                            <constraint firstItem="tJ2-vj-6Vg" firstAttribute="trailing" secondItem="8iL-sk-xD6" secondAttribute="trailingMargin" id="mvh-ru-RZ4"/>
-                            <constraint firstItem="tJ2-vj-6Vg" firstAttribute="leading" secondItem="Qfi-2a-L2z" secondAttribute="leading" id="oGv-or-YMR"/>
+                            <constraint firstItem="Qfi-2a-L2z" firstAttribute="leading" secondItem="1hd-vt-Iah" secondAttribute="leading" id="7S7-LG-oVp"/>
+                            <constraint firstItem="WQN-3w-XVE" firstAttribute="top" secondItem="1hd-vt-Iah" secondAttribute="bottom" constant="220" id="L9Q-n6-3Qf"/>
+                            <constraint firstItem="Qfi-2a-L2z" firstAttribute="top" secondItem="tJ2-vj-6Vg" secondAttribute="bottom" constant="8" symbolic="YES" id="Ldp-ye-yzZ"/>
+                            <constraint firstItem="1hd-vt-Iah" firstAttribute="top" secondItem="Qfi-2a-L2z" secondAttribute="bottom" constant="12" id="OYO-SN-aOq"/>
+                            <constraint firstItem="Qfi-2a-L2z" firstAttribute="trailing" secondItem="1hd-vt-Iah" secondAttribute="trailing" id="Y6j-Ik-lKb"/>
+                            <constraint firstItem="tJ2-vj-6Vg" firstAttribute="leading" secondItem="Qfi-2a-L2z" secondAttribute="leading" id="fdt-bO-FEV"/>
+                            <constraint firstItem="tJ2-vj-6Vg" firstAttribute="trailing" secondItem="Qfi-2a-L2z" secondAttribute="trailing" id="jPB-Gh-Ck2"/>
+                            <constraint firstItem="tJ2-vj-6Vg" firstAttribute="leading" secondItem="8iL-sk-xD6" secondAttribute="leadingMargin" id="nTe-vV-23x"/>
+                            <constraint firstItem="tJ2-vj-6Vg" firstAttribute="trailing" secondItem="8iL-sk-xD6" secondAttribute="trailingMargin" id="quC-FX-d9D"/>
+                            <constraint firstItem="tJ2-vj-6Vg" firstAttribute="top" secondItem="Qnv-GI-E61" secondAttribute="bottom" constant="28" id="rAU-D6-viq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="CcQ-EI-nqh"/>
                                 <exclude reference="tJ2-vj-6Vg"/>
+                                <exclude reference="1hd-vt-Iah"/>
                                 <exclude reference="Qfi-2a-L2z"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="B5M-Ig-m5j"/>
-                                <exclude reference="MjH-rG-jBx"/>
-                                <exclude reference="YZV-94-5Gw"/>
-                                <exclude reference="mvh-ru-RZ4"/>
-                                <exclude reference="oGv-or-YMR"/>
-                                <exclude reference="64v-JY-lCo"/>
-                                <exclude reference="CA5-tn-hw9"/>
-                                <exclude reference="CgL-SD-zk8"/>
-                                <exclude reference="bOc-TQ-OfB"/>
-                                <exclude reference="43i-mL-n7R"/>
+                                <exclude reference="L9Q-n6-3Qf"/>
+                                <exclude reference="7S7-LG-oVp"/>
+                                <exclude reference="Ldp-ye-yzZ"/>
+                                <exclude reference="Y6j-Ik-lKb"/>
+                                <exclude reference="fdt-bO-FEV"/>
+                                <exclude reference="jPB-Gh-Ck2"/>
+                                <exclude reference="nTe-vV-23x"/>
+                                <exclude reference="quC-FX-d9D"/>
+                                <exclude reference="rAU-D6-viq"/>
+                                <exclude reference="OYO-SN-aOq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="CcQ-EI-nqh"/>
                                 <include reference="tJ2-vj-6Vg"/>
+                                <include reference="1hd-vt-Iah"/>
                                 <include reference="Qfi-2a-L2z"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="B5M-Ig-m5j"/>
-                                <include reference="MjH-rG-jBx"/>
-                                <include reference="YZV-94-5Gw"/>
-                                <include reference="mvh-ru-RZ4"/>
-                                <include reference="oGv-or-YMR"/>
-                                <include reference="64v-JY-lCo"/>
-                                <include reference="CA5-tn-hw9"/>
-                                <include reference="CgL-SD-zk8"/>
-                                <include reference="bOc-TQ-OfB"/>
-                                <include reference="43i-mL-n7R"/>
+                                <include reference="L9Q-n6-3Qf"/>
+                                <include reference="7S7-LG-oVp"/>
+                                <include reference="Ldp-ye-yzZ"/>
+                                <include reference="Y6j-Ik-lKb"/>
+                                <include reference="fdt-bO-FEV"/>
+                                <include reference="jPB-Gh-Ck2"/>
+                                <include reference="nTe-vV-23x"/>
+                                <include reference="quC-FX-d9D"/>
+                                <include reference="rAU-D6-viq"/>
+                                <include reference="OYO-SN-aOq"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="chirpView" destination="CcQ-EI-nqh" id="g5K-TC-ZoD"/>
+                        <outlet property="chirpView" destination="1hd-vt-Iah" id="gjF-LE-xIh"/>
                         <outlet property="dateView" destination="Qfi-2a-L2z" id="PUZ-iv-XaN"/>
                         <outlet property="titleView" destination="tJ2-vj-6Vg" id="x6C-Rp-xB2"/>
                     </connections>
@@ -363,6 +365,7 @@
     </scenes>
     <resources>
         <image name="Create New-50" width="25" height="25"/>
+        <image name="Upload-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="foY-O8-feR"/>
